@@ -20,7 +20,7 @@ export default function MainPage(props) {
     // const questionObject = question.map((item) => {
     //     return item
     // })
-    const [hide, setHide] = useState(false)
+    const [hide, setHide] = useState(true)
     const [score, setScore] = useState(0)
 
     const increaseScore = (data) => {
@@ -29,9 +29,9 @@ export default function MainPage(props) {
     const decreaseScore = (data) => {
         setScore(score - parseInt(data))
     }
-const toggleQuestion = (data) => {
-    setHide(data)
-}
+    const toggleQuestion = (data) => {
+        setHide(data)
+    }
     const resetScore = () => {
         setScore(0)
     }
@@ -49,13 +49,13 @@ const toggleQuestion = (data) => {
                             <button className="button3" onClick={() => { resetScore() }}>Reset</button>
                         </div>
                         <h2>Let's Play!</h2>
-                        <button className="button4" onClick={() => { return getData(),setHide(false) }}>Get Question</button>
+                        <button className="button4" onClick={() => { return getData(), setHide(true) }}>Get Question</button>
                         <h2>Category: <span>{item.category.title}</span></h2>
                         <h2 className="points">Points: <span>{item.value}</span></h2>
-                        <h2>Answer: <span>{item.question}</span></h2>
+                        <h2>Question: <span>{item.question}</span></h2>
+                        <button className="button5" onClick={() => { setHide(!hide) }}>Click to Toggle Answer</button>
                         {!hide ?
-                            <button className="button5" onClick={() => { setHide(!hide) }}>Click to Toggle Question</button> : <>
-                                <button className="button5" onClick={() => { setHide(!hide) }}>Click to Toggle Question</button> <h3>Question: <span>{item.answer}</span></h3></>}
+                            <h3>Answer: <span>{item.answer}</span></h3> : ''}
 
                     </>
                 );
