@@ -48,6 +48,7 @@ h2 > span {
   margin-bottom: 100px;
 }
 button {
+  cursor: pointer;
   font-size: 1.5em;
   height: 50px;
   border-radius: 8px;
