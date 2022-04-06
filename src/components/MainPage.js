@@ -29,7 +29,9 @@ export default function MainPage(props) {
     const decreaseScore = (data) => {
         setScore(score - parseInt(data))
     }
-
+const toggleQuestion = (data) => {
+    setHide(data)
+}
     const resetScore = () => {
         setScore(0)
     }
@@ -47,13 +49,13 @@ export default function MainPage(props) {
                             <button className="button3" onClick={() => { resetScore() }}>Reset</button>
                         </div>
                         <h2>Let's Play!</h2>
-                        <button className="button4" onClick={() => { getData() }}>Get Question</button>
+                        <button className="button4" onClick={() => { return getData(),setHide(false) }}>Get Question</button>
                         <h2>Category: <span>{item.category.title}</span></h2>
                         <h2 className="points">Points: <span>{item.value}</span></h2>
-                        <h2>Answer: <span>{item.answer}</span></h2>
+                        <h2>Answer: <span>{item.question}</span></h2>
                         {!hide ?
                             <button className="button5" onClick={() => { setHide(!hide) }}>Click to Toggle Question</button> : <>
-                                <button className="button5" onClick={() => { setHide(!hide) }}>Click to Toggle Question</button> <h3>Question: <span>{item.question}</span></h3></>}
+                                <button className="button5" onClick={() => { setHide(!hide) }}>Click to Toggle Question</button> <h3>Question: <span>{item.answer}</span></h3></>}
 
                     </>
                 );
