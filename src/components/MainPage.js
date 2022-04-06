@@ -24,10 +24,10 @@ export default function MainPage(props) {
     const [score, setScore] = useState(0)
 
     const increaseScore = (data) => {
-        setScore(score += data)
+        setScore(score + parseInt(data))
     }
     const decreaseScore = (data) => {
-        setScore(score -= data)
+        setScore(score - parseInt(data))
     }
 
     const resetScore = () => {
@@ -40,10 +40,10 @@ export default function MainPage(props) {
                 return (
                     <>
                         <h1> WELCOME TO JEOPARDY</h1>
-                        <h2>Score: <span>{score}</span></h2>
+                        <h2 >Score: <span style={score >= 0 ? { color: "white" } : { color: "red" }}>{score}</span></h2>
                         <div className="buttonContainer">
-                            <button className="button1" onClick={() => { increaseScore() }}>Decrease</button>
-                            <button className="button2" onClick={() => { decreaseScore() }}>Increase</button>
+                            <button className="button1" onClick={() => { decreaseScore(item.value) }}>Decrease</button>
+                            <button className="button2" onClick={() => { increaseScore(item.value) }}>Increase</button>
                             <button className="button3" onClick={() => { resetScore() }}>Reset</button>
                         </div>
                         <h2>Let's Play!</h2>
