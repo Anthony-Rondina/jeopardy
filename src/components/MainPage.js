@@ -48,7 +48,7 @@ export default function MainPage(props) {
                         <button className="button4" onClick={() => { getData() }}>Get Question</button>
                         <h2>Category: <span>{item.category.title}</span></h2>
 
-                        <h1>Answer: <span>{item.answer}</span></h1>
+                        <h2>Answer: <span>{item.answer}</span></h2>
                         <button className="button5" onClick={() => { increaseScore() }}>Click to Reveal Question</button>
 
                     </>
