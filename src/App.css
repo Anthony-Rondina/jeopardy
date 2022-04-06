@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   background-color: #3d5f73 ;
-  width: 900px;
+  width: 1200px;
   min-width: 700px;
 }
 .buttonContainer{
@@ -21,6 +21,12 @@ h2 {
   color: #e7d17a;
   font-size: 2.5em;
 }
+h3 {
+  color: #e7d17a;
+  font-size: 2.5em;
+  text-align: center;
+  margin-top: -45px;
+}
 
 h1 > span {
   color: white;
@@ -28,7 +34,10 @@ h1 > span {
 h2 > span {
   color: white;
 }
-
+h3 > span {
+  color: white;
+  text-align: center;
+}
 .button1{
   background-color: #fe948c;
 }

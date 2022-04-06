@@ -20,7 +20,7 @@ export default function MainPage(props) {
     // const questionObject = question.map((item) => {
     //     return item
     // })
-
+    const [hide, setHide] = useState(false)
     const [score, setScore] = useState(0)
 
     const increaseScore = (data) => {
@@ -51,8 +51,9 @@ export default function MainPage(props) {
                         <h2>Category: <span>{item.category.title}</span></h2>
                         <h2 className="points">Points: <span>{item.value}</span></h2>
                         <h2>Answer: <span>{item.answer}</span></h2>
-                        {/* ternery here */}
-                        <button className="button5" onClick={() => { increaseScore() }}>Click to Reveal Question</button>
+                        {!hide ?
+                            <button className="button5" onClick={() => { setHide(!hide) }}>Click to Toggle Question</button> : <>
+                                <button className="button5" onClick={() => { setHide(!hide) }}>Click to Toggle Question</button> <h3>Question: <span>{item.question}</span></h3></>}
 
                     </>
                 );
