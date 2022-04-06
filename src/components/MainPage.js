@@ -17,15 +17,17 @@ export default function MainPage(props) {
         getData()
     }, [])
 
-    // const questionObject = question.map()
+    // const questionObject = question.map((item) => {
+    //     return item
+    // })
 
     const [score, setScore] = useState(0)
 
-    const increaseScore = () => {
-        setScore(score += question.value)
+    const increaseScore = (data) => {
+        setScore(score += data)
     }
-    const decreaseScore = () => {
-        setScore(score -= question.value)
+    const decreaseScore = (data) => {
+        setScore(score -= data)
     }
 
     const resetScore = () => {
@@ -47,8 +49,9 @@ export default function MainPage(props) {
                         <h2>Let's Play!</h2>
                         <button className="button4" onClick={() => { getData() }}>Get Question</button>
                         <h2>Category: <span>{item.category.title}</span></h2>
-
+                        <h2 className="points">Points: <span>{item.value}</span></h2>
                         <h2>Answer: <span>{item.answer}</span></h2>
+                        {/* ternery here */}
                         <button className="button5" onClick={() => { increaseScore() }}>Click to Reveal Question</button>
 
                     </>
